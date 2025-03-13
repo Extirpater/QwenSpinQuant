@@ -13,11 +13,11 @@ import datasets
 import torch
 import torch.distributed as dist
 from torch import nn
-from transformers import LlamaTokenizerFast, Trainer, default_data_collator
+from transformers import Qwen2TokenizerFast, Trainer, default_data_collator
 import transformers
 from train_utils.fsdp_trainer import FSDPTrainer
 from train_utils.main import prepare_model
-from train_utils.modeling_llama_quant import LlamaForCausalLM as LlamaForCausalLMQuant
+from train_utils.modeling_qwen2_quant import Qwen2ForCausalLM as Qwen2ForCausalLMQuant
 from train_utils.optimizer import SGDG
 from utils.data_utils import CustomJsonDataset
 from utils.hadamard_utils import random_hadamard_matrix
@@ -57,7 +57,7 @@ def train() -> None:
         config.tie_word_embeddings = False
         process_word_embeddings = True
     dtype = torch.bfloat16 if training_args.bf16 else torch.float16
-    model = LlamaForCausalLMQuant.from_pretrained(
+    model = Qwen2ForCausalLMQuant.from_pretrained(
         pretrained_model_name_or_path=model_args.input_model,
         config=config,
         torch_dtype=dtype,
@@ -80,7 +80,7 @@ def train() -> None:
     if local_rank == 0:
         log.info("Model init completed for training {}".format(model))
         log.info("Start to load tokenizer...")
-    tokenizer = LlamaTokenizerFast.from_pretrained(
+    tokenizer = Qwen2TokenizerFast.from_pretrained(
         pretrained_model_name_or_path=model_args.input_model,
         cache_dir=training_args.cache_dir,
         model_max_length=training_args.model_max_length,

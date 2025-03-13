@@ -1,4 +1,4 @@
-# SpinQuant
+# QwenSpinQuant
 
 This repository contains the code of SpinQuant introduced in our work: "[SpinQuant: LLM Quantization with Learned Rotations](https://arxiv.org/pdf/2405.16406)"
 
@@ -16,6 +16,7 @@ As a result, SpinQuant narrows the accuracy gap of W4A4KV4 quantization with ful
 </div>
 
 ## News
+- March 12, 2025: 🚀 QwenSpinQuant now supports SpinQuant for the Qwen2/Qwen2.5 family. The feature delivers optimal performance in W4A8 settings; however, it is not yet operational in W4A4 configurations due to significant channel outliers.
 - Oct 24, 2024: 🚀 SpinQuant supported the live demo in Meta Connect [[post](https://ai.meta.com/blog/meta-llama-quantized-lightweight-models/)]. We also made our 4-bit quantized LLaMA SpinQuant model publicly available [[post](https://ai.meta.com/blog/meta-llama-quantized-lightweight-models/)] [[Llama-3.2-1B-Instruct-SpinQuant_INT4](https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8)] [[Llama-3.2-3B-Instruct-SpinQuant_INT4](https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct-SpinQuant_INT4_EO8)].
 
 https://github.com/user-attachments/assets/e7bebfd5-ef13-440f-8066-7bf9205ad309
