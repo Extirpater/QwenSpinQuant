@@ -1,5 +1,5 @@
-transformers==4.44.2
-accelerate==0.34.2
+transformers==4.49.0
+accelerate==1.4.0
 datasets==2.20.0
 sentencepiece
 tensorboardX
