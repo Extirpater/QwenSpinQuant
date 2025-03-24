@@ -15,7 +15,7 @@ from typing import Optional
 
 import numpy as np
 import torch
-from fast_hadamard_transform import hadamard_transform
+#from fast_hadamard_transform import hadamard_transform
 from torch.distributed.fsdp import (
     FullStateDictConfig,
 )
